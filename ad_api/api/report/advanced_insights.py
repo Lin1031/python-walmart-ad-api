@@ -12,4 +12,3 @@ class AdvancedInsights(BaseClient):
     def list_snapshot_v1(self, data, **kwargs) -> ApiResponse:
         # data = { "snapshotId" :snapshotId}
         return self._request(kwargs.pop('path'), params=kwargs.update(data))
-
