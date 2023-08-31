@@ -51,12 +51,12 @@ class BaseClient:
             "accept": "application/json"
         }
 
-    def _request(self, path, data=None, params=None, headers=None):
+    def _request(self, path, json=None, params=None, headers=None, files=None, data=None):
 
         self.calculate_signature(path, params)
         self.sign_data()
-        response = requests.post(self.endpoint + path, json=data, headers=headers or self.headers,
-                                 params=params.update({"auth_token": self.auth_token}))
+        response = requests.post(self.endpoint + path, json=json, headers=headers or self.headers,
+                                 params=params.update({"auth_token": self.auth_token}), data=data, files=files)
 
         return self._check_response(response)
 

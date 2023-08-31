@@ -6,11 +6,11 @@ class BidMultipliers(BaseClient):
 
     @endpoint('/api/v1/multipliers/placement', method='POST')
     def create_multipliers_placement(self, **kwargs) -> ApiResponse:
-        return self._request(kwargs.pop('path'), data=kwargs.pop('body'), params=kwargs)
+        return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v1/multipliers/placement', method='PUT')
     def edit_multipliers_placement(self, **kwargs) -> ApiResponse:
-        return self._request(kwargs.pop('path'), data=kwargs.pop('body'), params=kwargs)
+        return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v1/multipliers/placement', method='GET')
     def list_multipliers_placement(self, campaignId, **kwargs) -> ApiResponse:
@@ -18,11 +18,11 @@ class BidMultipliers(BaseClient):
 
     @endpoint('/api/v1/multipliers/platform', method='POST')
     def create_multipliers_platform(self, **kwargs) -> ApiResponse:
-        return self._request(kwargs.pop('path'), data=kwargs.pop('body'), params=kwargs)
+        return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v1/multipliers/platform', method='PUT')
     def edit_multipliers_platform(self, **kwargs) -> ApiResponse:
-        return self._request(kwargs.pop('path'), data=kwargs.pop('body'), params=kwargs)
+        return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v1/multipliers/platform', method='GET')
     def list_multipliers_platform(self, campaignId, **kwargs) -> ApiResponse:

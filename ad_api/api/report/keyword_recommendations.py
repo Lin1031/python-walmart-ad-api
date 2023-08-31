@@ -6,7 +6,7 @@ class ItemRecommendations(BaseClient):
 
     @endpoint('/api/v1/snapshot/recommendations', method='POST')
     def create_keyword_recommendations(self, **kwargs) -> ApiResponse:
-        return self._request(kwargs.pop('path'), data=kwargs.pop('body'), params=kwargs)
+        return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v1/snapshot', method='GET')
     def list_keyword_recommendations(self, data, **kwargs) -> ApiResponse:
