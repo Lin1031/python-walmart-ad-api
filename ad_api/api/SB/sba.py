@@ -13,7 +13,7 @@ class SBAProfile(BaseClient):
         return self._request(kwargs.pop('path'), json=kwargs.pop('body'), params=kwargs)
 
     @endpoint('/api/v2/sba_profile', method='GET')
-    def list_ad_groups(self, data, **kwargs) -> ApiResponse:
+    def list_sba_profile(self, data, **kwargs) -> ApiResponse:
         # data = {"campaignId": campaignId, "adGroupId": adGroupId}
         return self._request(kwargs.pop('path'), params=kwargs.update(data))
 
