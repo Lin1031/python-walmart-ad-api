@@ -2,15 +2,13 @@ import base64
 import time
 
 import requests
-import hashlib
-
 from Crypto.Hash import SHA256
 from Crypto.PublicKey import RSA
 from Crypto.Signature import PKCS1_v1_5
-from cryptography.hazmat.primitives import serialization
 from requests import JSONDecodeError
 
 from ad_api.base import ApiResponse
+from ad_api.base.config import private_key_path
 from ad_api.base.exceptions import get_exception_for_content, get_exception_for_code
 
 
@@ -30,7 +28,7 @@ class BaseClient:
 
     def sign_data(self):
         try:
-            with open('./WM_IO_private_key.pem', 'r') as f:
+            with open(private_key_path, 'r') as f:
                 private_key = RSA.importKey(f.read())
         except IOError as e:
             print(e)

@@ -6,6 +6,9 @@ if not redis_url:
     raise Exception("redis url %r not invalid" % redis_url)
 redis_cache = StrictRedis.from_url(redis_url)
 
+private_key_path = "./WM_IO_private_key.pem"
+
+
 
 # 'redis://192.168.0.123:6379/0'
 class BaseConfig:
